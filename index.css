@@ -1,0 +1,50 @@
+body{
+	
+	background-color: #5E4017;
+	color: #BAA600 !important;
+}
+
+.mainTable{
+	margin: auto;
+}
+.webTitle{
+	font-size: 40px;
+	font-family: monospace;
+	text-align: center;
+}
+.navBar{
+	text-align: center;
+}
+
+.navBar td a:link { text-decoration: none; }
+.navBar td a:visited { text-decoration: none; }
+.navBar td a:hover { text-decoration: none; }
+.navBar td a:active { text-decoration: none; }
+
+
+
+.divider{
+	background-color: #417777;
+	height: 20px;
+	width: 500px
+}
+.art{
+	font-family: monospace;
+	white-space: pre;
+	text-align:center;
+	line-height: 8px;
+}
+
+.buttons:hover{
+	color: #ffe400 !important;
+	text-decoration: underline !important;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
