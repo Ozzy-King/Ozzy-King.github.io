@@ -12,14 +12,14 @@
 	
 		<table class="mainTable" border=0>
 			<tr>
-				<th colspan=6 class="webTitle">Osbournes WebPlace</th>
+				<th colspan=6 class="webTitle">Osbournes Web Place</th>
 			</tr>
 			
 			<tr class="navBar">
 				<td><span class="buttons noselect" onclick="navSelect('index')">Home</span></td>
 				<td><span class="buttons noselect" onclick="navSelect('about')">About</span></td>
 				<td class="buttons noselect">Grades</td>
-				<td class="buttons noselect">Development</td>
+				<td class="buttons noselect" onclick="navSelect('development/index')">Development</td>
 				<td class="buttons noselect">Art</td>
 				<td class="buttons noselect">Social Media</td>
 			</tr>
@@ -29,45 +29,47 @@
 					<div class="divider"></div>
 				</td>
 			</tr>
-			
 			<tr>
 				<td colspan=3><span id="darkButton" class="buttons noselect" onclick="darkModeOn()">Darkmode test</button></td>
 				<td colspan=3 style="text-align:right;"><span id="lightButton" class="noselect" onclick="lightModeOn()">Lightmode test</button></td>
 			</tr>
+		</table>
+	
+		<table class="mainTable" border=0>
 			
-			<tr class="art"><td colspan=6>            .-.             </td> </tr>
-			<tr class="art"><td colspan=6>            \  \            </td> </tr>
-			<tr class="art"><td colspan=6>             )  )           </td> </tr>
-			<tr class="art"><td colspan=6>            /   |           </td> </tr>
-			<tr class="art"><td colspan=6>      _   .(   /            </td> </tr>
-			<tr class="art"><td colspan=6>     / | (     )            </td> </tr>
-			<tr class="art"><td colspan=6>    /   \ )   (             </td> </tr>
-			<tr class="art"><td colspan=6>   (     /   / \            </td> </tr>
-			<tr class="art"><td colspan=6>    \   |  \\   |           </td> </tr>
-			<tr class="art"><td colspan=6>     \ /|  / |   \          </td> </tr>
-			<tr class="art"><td colspan=6>     .'  \/   \   )         </td> </tr>
-			<tr class="art"><td colspan=6>    (     \    ) /          </td> </tr>
-			<tr class="art"><td colspan=6>     \     )  / (           </td> </tr>
-			<tr class="art"><td colspan=6>      )  .'  (   \          </td> </tr>
-			<tr class="art"><td colspan=6>     |  /     \   |         </td> </tr>
-			<tr class="art"><td colspan=6>.---/--|-------\---\--.     </td> </tr>
-			<tr class="art"><td colspan=6>|'''''''''''''''''''''|     </td> </tr>
-			<tr class="art"><td colspan=6>|                     |     </td> </tr>
-			<tr class="art"><td colspan=6>|             _      .+.    </td> </tr>
-			<tr class="art"><td colspan=6>|    /   /   / |   / \  \   </td> </tr>
-			<tr class="art"><td colspan=6>|   |   |   /  |  |  /\  \  </td> </tr>
-			<tr class="art"><td colspan=6>| \-+---+-\    |  ''' |\  \ </td> </tr>
-			<tr class="art"><td colspan=6>|   |   |      |      | |  )</td> </tr>
-			<tr class="art"><td colspan=6>| \-+---+-\    |      | |  |</td> </tr>
-			<tr class="art"><td colspan=6>|   |   |      |      | |  |</td> </tr>
-			<tr class="art"><td colspan=6>|  /   /       |      | |  |</td> </tr>
-			<tr class="art"><td colspan=6>|            __|__    | |  |</td> </tr>
-			<tr class="art"><td colspan=6>|                  .-.| |  )</td> </tr>
-			<tr class="art"><td colspan=6>|                  \  \/  / </td> </tr>
-			<tr class="art"><td colspan=6>|                   \/_./   </td> </tr>
-			<tr class="art"><td colspan=6>|                     |     </td> </tr>
-			<tr class="art"><td colspan=6> \.                 ./      </td> </tr>
-			<tr class="art"><td colspan=6>   '''''''''''''''''        </td> </tr>
+			<tr class="art"><td>            .-.             </td> </tr>
+			<tr class="art"><td>            \  \            </td> </tr>
+			<tr class="art"><td>             )  )           </td> </tr>
+			<tr class="art"><td>            /   |           </td> </tr>
+			<tr class="art"><td>      _   .(   /            </td> </tr>
+			<tr class="art"><td>     / | (     )            </td> </tr>
+			<tr class="art"><td>    /   \ )   (             </td> </tr>
+			<tr class="art"><td>   (     /   / \            </td> </tr>
+			<tr class="art"><td>    \   |  \\   |           </td> </tr>
+			<tr class="art"><td>     \ /|  / |   \          </td> </tr>
+			<tr class="art"><td>     .'  \/   \   )         </td> </tr>
+			<tr class="art"><td>    (     \    ) /          </td> </tr>
+			<tr class="art"><td>     \     )  / (           </td> </tr>
+			<tr class="art"><td>      )  .'  (   \          </td> </tr>
+			<tr class="art"><td>     |  /     \   |         </td> </tr>
+			<tr class="art"><td>.---/--|-------\---\--.     </td> </tr>
+			<tr class="art"><td>|'''''''''''''''''''''|     </td> </tr>
+			<tr class="art"><td>|                     |     </td> </tr>
+			<tr class="art"><td>|             _      .+.    </td> </tr>
+			<tr class="art"><td>|    /   /   / |   / \  \   </td> </tr>
+			<tr class="art"><td>|   |   |   /  |  |  /\  \  </td> </tr>
+			<tr class="art"><td>| \-+---+-\    |  ''' |\  \ </td> </tr>
+			<tr class="art"><td>|   |   |      |      | |  )</td> </tr>
+			<tr class="art"><td>| \-+---+-\    |      | |  |</td> </tr>
+			<tr class="art"><td>|   |   |      |      | |  |</td> </tr>
+			<tr class="art"><td>|  /   /       |      | |  |</td> </tr>
+			<tr class="art"><td>|            __|__    | |  |</td> </tr>
+			<tr class="art"><td>|                  .-.| |  )</td> </tr>
+			<tr class="art"><td>|                  \  \/  / </td> </tr>
+			<tr class="art"><td>|                   \/_./   </td> </tr>
+			<tr class="art"><td>|                     |     </td> </tr>
+			<tr class="art"><td> \.                 ./      </td> </tr>
+			<tr class="art"><td>   '''''''''''''''''        </td> </tr>
 		
 		</table>
 	

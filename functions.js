@@ -2,10 +2,10 @@
 var currentPage="";
 var _darkMode = 0;
 
-window.addEventListener("load", function(){browserSetup();});
+//window.addEventListener("load", function(){browserSetup();});
 
 //once loaded run function
-function browserSetup(){
+window.onload = function(){
 	currentPage = document.getElementById("body").classList[0];
 	console.log("currentPage: "+currentPage);
 	

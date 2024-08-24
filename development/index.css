@@ -1,0 +1,21 @@
+.mainTable{
+	margin: auto;
+	 border-collapse: collapse;
+}
+
+table.mainTable th{
+	/*width: 12%;*/
+	background-color:  #41775C;
+	word-wrap: break-word;
+	max-width: 100px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+table.mainTable td{
+	/*width: 12%;*/
+	word-wrap: break-word;
+	max-width: 500px;
+	padding-left: 3px;
+	padding-right: 3px;
+	height:auto;
+}

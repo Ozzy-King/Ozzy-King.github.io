@@ -1,23 +1,27 @@
 <!DOCTYPE html>
+
 <html>
+
 	<head>
+		<link href="../index.css" rel="stylesheet"></link>
 		<link href="./index.css" rel="stylesheet"></link>
-		<script src="./functions.js"></script>
+		<script src="../functions.js"></script>
+		<script src="./devPageFuncs.js"></script>
 		<title>Osbournes Portfolio</title>
 	</head>
+
+	<body id="body" class="index">
 	
-	<body id="body" class="about">
-		
-		<table class="mainTable" border=0>
+		<table class="headTable" border=0>
 			<tr>
-				<th colspan=6 class="webTitle">About Osbourne</th>
+				<th colspan=6 class="webTitle">Osbournes Development</th>
 			</tr>
 			
 			<tr class="navBar">
-				<td><span class="buttons noselect" onclick="navSelect('index')">Home</span></td>
-				<td><span class="buttons noselect" onclick="navSelect('about')">About</span></td>
+				<td><span class="buttons noselect" onclick="navSelect('../index')">Home</span></td>
+				<td><span class="buttons noselect" onclick="navSelect('../about')">About</span></td>
 				<td class="buttons noselect">Grades</td>
-				<td class="buttons noselect" onclick="navSelect('development/index')">Development</td>
+				<td class="buttons noselect">Development</td>
 				<td class="buttons noselect">Art</td>
 				<td class="buttons noselect">Social Media</td>
 			</tr>
@@ -32,16 +36,21 @@
 				<td colspan=3 style="text-align:right;"><span id="lightButton" class="noselect" onclick="lightModeOn()">Lightmode test</button></td>
 			</tr>
 		</table>
-		
-		
-		<table class="mainTable" border=0>
-
-			<tr>
-				<td>hello, i'm osbourne clark. im currently studing computer sience(games development) at plymouth university</td>
+	
+		<table class="mainTable" border=2>
+			<tr class="titleCard">
+				<th>name</th>
+				<th>description</th>
+				<th>languages</th>
+				<th>forks</th>
+				<th>last push</th>
 			</tr>
 		</table>
-		
-		
-		
+	
+	
 	</body>
+
+
+
+
 </html>

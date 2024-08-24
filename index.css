@@ -4,6 +4,9 @@ body{
 	color: #BAA600 !important;
 }
 
+.headTable{
+	margin: auto;
+}
 .mainTable{
 	margin: auto;
 }
@@ -13,6 +16,7 @@ body{
 	text-align: center;
 }
 .navBar{
+	margin: auto;
 	text-align: center;
 }
 
@@ -26,7 +30,7 @@ body{
 .divider{
 	background-color: #417777;
 	height: 20px;
-	width: 500px
+	width: 500px;
 }
 .art{
 	font-family: monospace;
