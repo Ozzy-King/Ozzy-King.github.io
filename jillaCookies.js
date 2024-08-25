@@ -14,7 +14,7 @@ function getCookie(name){
 			return temp[1];
 		}
 	}
-	
+	return "null";
 }
 
 function updateCookie(name, val, path = "/"){

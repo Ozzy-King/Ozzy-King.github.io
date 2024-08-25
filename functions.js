@@ -9,22 +9,19 @@ window.onload = function(){
 	currentPage = document.getElementById("body").classList[0];
 	console.log("currentPage: "+currentPage);
 	
-	//check url params for darkmode test and set if nessisary
-	var queryString= window.location.search;
-	var urlParam= new URLSearchParams(queryString);
-	_darkMode = urlParam.get("darkMode");
+	_darkMode = getCookie("darkMode");
+	if(_darkMode == "null"){_darkMode = 0;}
 	
 	console.log("darkmode cookie: " + getCookie("darkMode"));
 	
 	if(_darkMode == 1){ darkModeOn(); }
 	else{ lightModeOn(); }
-	createCookie("darkMode", _darkMode, "/");
 }	
 
 //nav bar functions
 function navSelect(page){
 	if(currentPage == page){ return; }
-	window.location.href="./"+page+".html?darkMode="+_darkMode;
+	window.location.href="./"+page;
 }
 
 
@@ -44,6 +41,7 @@ function darkModeOn(){
 	
 	document.getElementById("lightButton").style.textDecoration = "none";
 	document.getElementById("lightButton").classList.add("buttons");
+	updateCookie("darkMode", _darkMode, "/");
 }
 function lightModeOn(){
 	_darkMode = 0;
@@ -60,4 +58,5 @@ function lightModeOn(){
 	
 	document.getElementById("lightButton").style.textDecoration = "line-through";
 	document.getElementById("lightButton").classList.remove("buttons");
+	updateCookie("darkMode", _darkMode, "/");
 }
