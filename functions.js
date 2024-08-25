@@ -6,6 +6,10 @@ var _darkMode = 0;
 
 //once loaded run function
 window.onload = function(){
+	OnloadFunc();
+}
+
+function OnloadFunc(){
 	currentPage = document.getElementById("body").classList[0];
 	console.log("currentPage: "+currentPage);
 	
@@ -16,7 +20,7 @@ window.onload = function(){
 	
 	if(_darkMode == 1){ darkModeOn(); }
 	else{ lightModeOn(); }
-}	
+}
 
 //nav bar functions
 function navSelect(page){

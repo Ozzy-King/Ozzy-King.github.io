@@ -2,6 +2,8 @@
 
 //once loaded run function
 window.onload = async function(){
+	OnloadFunc();
+	
 	const response = await fetch("https://api.github.com/users/Ozzy-King/repos"); 
 	const json = await response.text();
 	const myArr = JSON.parse(json);
