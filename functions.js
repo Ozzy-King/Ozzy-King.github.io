@@ -14,9 +14,11 @@ window.onload = function(){
 	var urlParam= new URLSearchParams(queryString);
 	_darkMode = urlParam.get("darkMode");
 	
+	console.log("darkmode cookie: " + getCookie("darkMode"));
+	
 	if(_darkMode == 1){ darkModeOn(); }
 	else{ lightModeOn(); }
-	
+	createCookie("darkMode", _darkMode);
 }	
 
 //nav bar functions
