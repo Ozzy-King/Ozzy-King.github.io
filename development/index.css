@@ -1,6 +1,7 @@
 .mainTable{
 	margin: auto;
-	 border-collapse: collapse;
+	/*border-collapse: collapse;*/
+	border-spacing: 0px 5px;
 }
 
 table.mainTable th{
@@ -10,6 +11,9 @@ table.mainTable th{
 	max-width: 100px;
 	padding-left: 3px;
 	padding-right: 3px;
+	
+	border: solid 1px;
+	
 }
 table.mainTable td{
 	/*width: 12%;*/
@@ -18,4 +22,26 @@ table.mainTable td{
 	padding-left: 3px;
 	padding-right: 3px;
 	height:auto;
+	
+	border: solid 1px;
+	
+	
+	
+}
+
+
+table.mainTable tr{
+	background-color: #192222;
+}
+table.mainTable tr:link { text-decoration: none; }
+table.mainTable tr:visited { text-decoration: none; }
+table.mainTable tr:hover { text-decoration: none; background-color: #2F3F3F; }
+table.mainTable tr:active { text-decoration: none; }
+
+
+table.mainTable td.beg{
+	border-radius: 10px 0px 0px 10px;
+}
+table.mainTable td.end{
+	border-radius: 0px 10px 10px 0px;
 }

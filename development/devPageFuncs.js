@@ -18,6 +18,7 @@ window.onload = async function(){
 		var col = document.createElement("td");
 		var node = document.createTextNode(myArr[i].name);
 		col.appendChild(node);
+		col.classList.add("beg");
 		row.appendChild(col);
 		
 		//adds the description
@@ -42,6 +43,7 @@ window.onload = async function(){
 		col = document.createElement("td");
 		node = document.createTextNode(myArr[i].pushed_at.replace("T", " ").substring(0, myArr[i].pushed_at.length-1));
 		col.appendChild(node);
+		col.classList.add("end");
 		row.appendChild(col);
 		
 		x.appendChild(row);
