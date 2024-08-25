@@ -18,7 +18,7 @@ window.onload = function(){
 	
 	if(_darkMode == 1){ darkModeOn(); }
 	else{ lightModeOn(); }
-	createCookie("darkMode", _darkMode);
+	createCookie("darkMode", _darkMode, "/");
 }	
 
 //nav bar functions
