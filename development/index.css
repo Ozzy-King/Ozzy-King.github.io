@@ -29,6 +29,12 @@ table.mainTable td{
 	
 }
 
+table.mainTable ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	
+}
 
 table.mainTable tr{
 	background-color: #192222;
