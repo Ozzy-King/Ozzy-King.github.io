@@ -4,7 +4,7 @@
 window.onload = async function(){
 	OnloadFunc();
 	
-	let response = await fetch("https://api.github.com/users/myles-rockland/repos"); 
+	let response = await fetch("https://api.github.com/users/ozzy-king/repos"); 
 	let json = await response.text();
 	let myArr = JSON.parse(json);
 	console.log(myArr.length);
