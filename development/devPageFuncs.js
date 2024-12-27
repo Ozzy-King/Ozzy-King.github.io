@@ -15,7 +15,7 @@ window.onload = async function(){
 	for(let i = 0; i < myArr.length; i++){
 		let row = document.createElement("tr");
 		if(myArr[i].has_pages){
-			row.setAttribute("onclick", "redirecting('https://"+UserName+".github.io/"+myArr[i].name+"/')");
+			row.setAttribute("onclick", "redirecting('https://"+UsersName+".github.io/"+myArr[i].name+"/')");
 		}
 		else{
 			row.setAttribute("onclick", "redirecting('"+myArr[i].html_url+"');");
@@ -34,22 +34,23 @@ window.onload = async function(){
 		col.appendChild(node);
 		row.appendChild(col);
 		
-		//add lauguages
+		//add lauguages(commented out is to get all luages for porject, this just gets most used)
 		
-		response = await fetch(myArr[i].languages_url); //fetch list of languages
-		json = await response.text();
-		var langArr = JSON.parse(json);
-		langArr = Object.keys(langArr);
+		//response = await fetch(myArr[i].languages_url); //fetch list of languages
+		//json = await response.text();
+		//var langArr = JSON.parse(json);
+		//langArr = Object.keys(langArr);
 		
 		col = document.createElement("td");//create table data
-		let list = document.createElement("ul");//create uordered list
-		for(let i = 0; i < langArr.length; i++){ //loop thouhg language names
-			let listItem = document.createElement("li");//crate list item
-			let node = document.createTextNode(langArr[i]);//give list items lang name
-			listItem.appendChild(node);
-			list.appendChild(listItem);//add list item to list
-		}
-		col.appendChild(list);//apend list to table data
+		node = document.createTextNode(myArr[i].language)
+		//let list = document.createElement("ul");//create uordered list
+		//for(let i = 0; i < langArr.length; i++){ //loop thouhg language names
+		//	let listItem = document.createElement("li");//crate list item
+		//	let node = document.createTextNode(langArr[i]);//give list items lang name
+		//	listItem.appendChild(node);
+		//	list.appendChild(listItem);//add list item to list
+		//}
+		col.appendChild(node);//apend list to table data
 		row.appendChild(col);//append table data
 		
 		//add number of forks
