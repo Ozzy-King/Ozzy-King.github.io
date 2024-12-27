@@ -4,7 +4,9 @@
 window.onload = async function(){
 	OnloadFunc();
 	
-	let response = await fetch("https://api.github.com/users/ozzy-king/repos"); 
+	var UsersName = "ozzy-king";
+
+	let response = await fetch("https://api.github.com/users/"+UsersName+"/repos"); 
 	let json = await response.text();
 	let myArr = JSON.parse(json);
 	console.log(myArr.length);
@@ -12,8 +14,13 @@ window.onload = async function(){
 	
 	for(let i = 0; i < myArr.length; i++){
 		let row = document.createElement("tr");
-		row.setAttribute("onclick","redirecting('"+myArr[i].html_url+"');");
-		
+		if(myArr[i].has_pages){
+			row.setAttribute("onclick", "redirecting('https://"+UserName+".github.io/"+myArr[i].name+"/')");
+		}
+		else{
+			row.setAttribute("onclick", "redirecting('"+myArr[i].html_url+"');");
+		}
+
 		//adds the name
 		let col = document.createElement("td");
 		let node = document.createTextNode(myArr[i].name);
