@@ -1,16 +1,36 @@
 
-
 //once loaded run function
 window.onload = async function(){
 	OnloadFunc();
-	
-	var UsersName = "ozzy-king";
+	let searchBoxEle = document.getElementById("searchUserBox");
+	searchBoxEle.value= "";
+	await newSearch();
+}
+
+
+async function newSearch(){
+	let searchBoxEle = document.getElementById("searchUserBox");
+	var UsersName = searchBoxEle.value;
+	if (UsersName == ""){
+		UsersName = "ozzy-king";
+	}
 
 	let response = await fetch("https://api.github.com/users/"+UsersName+"/repos"); 
 	let json = await response.text();
 	let myArr = JSON.parse(json);
 	console.log(myArr.length);
 	let x = document.getElementsByClassName("mainTable")[0];
+	while (x.childElementCount != 1) {
+		x.removeChild(x.lastChild);
+	}
+	
+	
+	let title = document.getElementById("title");
+	if(UsersName == "ozzy-king"){
+		title.textContent = "Osbournes Development";
+	}else{
+		title.textContent = UsersName + "s Development";
+	}
 	
 	for(let i = 0; i < myArr.length; i++){
 		let row = document.createElement("tr");
@@ -70,6 +90,9 @@ window.onload = async function(){
 	}
 	
 	
-}	
+}
+
+
+
 
 function redirecting(url){window.location.href = url;}
