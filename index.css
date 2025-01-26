@@ -25,6 +25,14 @@ body{
 .navBar td a:hover { text-decoration: none; }
 .navBar td a:active { text-decoration: none; }
 
+.aboutTable{
+	width: 50%;
+	margin: auto;
+}
+.aboutTable td{
+	text-align: center;
+}
+
 
 
 .divider{
@@ -51,4 +59,17 @@ body{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+.findMeAtLink{}
+.findMeAtLink img{
+	width: 8ch;
+	height: auto;
+}
+.linksPannel { 
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
 }

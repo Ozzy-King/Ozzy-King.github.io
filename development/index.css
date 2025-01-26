@@ -51,3 +51,15 @@ table.mainTable td.beg{
 table.mainTable td.end{
 	border-radius: 0px 10px 10px 0px;
 }
+
+.findMeAtLink{}
+.findMeAtLink img{
+	width: 8ch;
+	height: auto;
+}
+.linksPannel { 
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+}
