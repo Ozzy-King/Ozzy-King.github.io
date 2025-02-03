@@ -5,8 +5,9 @@ var _darkMode = 0;
 //window.addEventListener("load", function(){browserSetup();});
 
 //once loaded run function
-window.onload = function(){
+window.onload = async function(){
 	OnloadFunc();
+	await loadPage('homePage');
 }
 
 function OnloadFunc(){
@@ -21,13 +22,6 @@ function OnloadFunc(){
 	if(_darkMode == 1){ darkModeOn(); }
 	else{ lightModeOn(); }
 }
-
-//nav bar functions
-function navSelect(page){
-	if(currentPage == page){ return; }
-	window.location.href="./"+page;
-}
-
 
 //dark and lihgt mode functions
 function darkModeOn(){

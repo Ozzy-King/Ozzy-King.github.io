@@ -1,36 +1,23 @@
 
 //once loaded run function
-window.onload = async function(){
-	OnloadFunc();
-	let searchBoxEle = document.getElementById("searchUserBox");
-	searchBoxEle.value= "";
+async function JS_PAGE_INIT(){
 	await newSearch();
 }
 
 
 async function newSearch(){
 	let searchBoxEle = document.getElementById("searchUserBox");
-	var UsersName = searchBoxEle.value;
-	if (UsersName == ""){
-		UsersName = "ozzy-king";
-	}
+	var UsersName = "ozzy-king";
 
-	let response = await fetch("https://api.github.com/users/"+UsersName+"/repos"); 
-	let json = await response.text();
-	let myArr = JSON.parse(json);
+	var response = await fetch("https://api.github.com/users/"+UsersName+"/repos"); 
+	var json = await response.text();
+	var myArr = JSON.parse(json);
 	console.log(myArr.length);
-	let x = document.getElementsByClassName("mainTable")[0];
+	var x = document.getElementsByClassName("devTable")[0];
 	while (x.childElementCount != 1) {
 		x.removeChild(x.lastChild);
 	}
 	
-	
-	let title = document.getElementById("title");
-	if(UsersName == "ozzy-king"){
-		title.textContent = "Osbournes Development";
-	}else{
-		title.textContent = UsersName + "s Development";
-	}
 	
 	for(let i = 0; i < myArr.length; i++){
 		let row = document.createElement("tr");
@@ -53,23 +40,10 @@ async function newSearch(){
 		node = document.createTextNode(myArr[i].description);
 		col.appendChild(node);
 		row.appendChild(col);
-		
-		//add lauguages(commented out is to get all luages for porject, this just gets most used)
-		
-		//response = await fetch(myArr[i].languages_url); //fetch list of languages
-		//json = await response.text();
-		//var langArr = JSON.parse(json);
-		//langArr = Object.keys(langArr);
-		
+
+		//add primary language to list
 		col = document.createElement("td");//create table data
 		node = document.createTextNode(myArr[i].language)
-		//let list = document.createElement("ul");//create uordered list
-		//for(let i = 0; i < langArr.length; i++){ //loop thouhg language names
-		//	let listItem = document.createElement("li");//crate list item
-		//	let node = document.createTextNode(langArr[i]);//give list items lang name
-		//	listItem.appendChild(node);
-		//	list.appendChild(listItem);//add list item to list
-		//}
 		col.appendChild(node);//apend list to table data
 		row.appendChild(col);//append table data
 		
@@ -91,8 +65,4 @@ async function newSearch(){
 	
 	
 }
-
-
-
-
 function redirecting(url){window.location.href = url;}

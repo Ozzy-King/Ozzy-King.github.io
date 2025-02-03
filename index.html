@@ -5,6 +5,8 @@
 	<head>
 		<link href="./index.css" rel="stylesheet"></link>
 		<script src="./jillaCookies.js"></script>
+		<script src="./dynamicUnload.js"></script>
+		<script src="./dynamicLoad.js"></script>
 		<script src="./functions.js"></script>
 		<title>Osbournes Portfolio</title>
 	</head>
@@ -17,10 +19,10 @@
 			</tr>
 			
 			<tr class="navBar">
-				<td><span class="buttons noselect" onclick="navSelect('index')">Home</span></td>
-				<td><span class="buttons noselect" onclick="navSelect('about')">About</span></td>
-				<td class="buttons noselect" onclick="navSelect('blog/')">Blog</td>
-				<td class="buttons noselect" onclick="navSelect('development/')">Development</td>
+				<td><span class="buttons noselect" onclick="loadPage('homePage')">Home</span></td>
+				<td><span class="buttons noselect" onclick="loadPage('aboutPage')">About</span></td>
+				<td class="buttons noselect" onclick="">Blog</td>
+				<td class="buttons noselect" onclick="loadPage('devPage')">Development</td>
 				<td class="buttons noselect">Art</td>
 				<td class="buttons noselect">Social Media</td>
 			</tr>
@@ -35,51 +37,19 @@
 				<td colspan=3 style="text-align:right;"><span id="lightButton" class="noselect" onclick="lightModeOn()">Lightmode test</button></td>
 			</tr>
 		</table>
-	
-		<table class="mainTable" border=0>
-			
-			<tr class="art"><td>            .-.             </td> </tr>
-			<tr class="art"><td>            \  \            </td> </tr>
-			<tr class="art"><td>             )  )           </td> </tr>
-			<tr class="art"><td>            /   |           </td> </tr>
-			<tr class="art"><td>      _   .(   /            </td> </tr>
-			<tr class="art"><td>     / | (     )            </td> </tr>
-			<tr class="art"><td>    /   \ )   (             </td> </tr>
-			<tr class="art"><td>   (     /   / \            </td> </tr>
-			<tr class="art"><td>    \   |  \\   |           </td> </tr>
-			<tr class="art"><td>     \ /|  / |   \          </td> </tr>
-			<tr class="art"><td>     .'  \/   \   )         </td> </tr>
-			<tr class="art"><td>    (     \    ) /          </td> </tr>
-			<tr class="art"><td>     \     )  / (           </td> </tr>
-			<tr class="art"><td>      )  .'  (   \          </td> </tr>
-			<tr class="art"><td>     |  /     \   |         </td> </tr>
-			<tr class="art"><td>.---/--|-------\---\--.     </td> </tr>
-			<tr class="art"><td>|'''''''''''''''''''''|     </td> </tr>
-			<tr class="art"><td>|                     |     </td> </tr>
-			<tr class="art"><td>|             _      .+.    </td> </tr>
-			<tr class="art"><td>|    /   /   / |   / \  \   </td> </tr>
-			<tr class="art"><td>|   |   |   /  |  |  /\  \  </td> </tr>
-			<tr class="art"><td>| \-+---+-\    |  ''' |\  \ </td> </tr>
-			<tr class="art"><td>|   |   |      |      | |  )</td> </tr>
-			<tr class="art"><td>| \-+---+-\    |      | |  |</td> </tr>
-			<tr class="art"><td>|   |   |      |      | |  |</td> </tr>
-			<tr class="art"><td>|  /   /       |      | |  |</td> </tr>
-			<tr class="art"><td>|            __|__    | |  |</td> </tr>
-			<tr class="art"><td>|                  .-.| |  )</td> </tr>
-			<tr class="art"><td>|                  \  \/  / </td> </tr>
-			<tr class="art"><td>|                   \/_./   </td> </tr>
-			<tr class="art"><td>|                     |     </td> </tr>
-			<tr class="art"><td> \.                 ./      </td> </tr>
-			<tr class="art"><td>   '''''''''''''''''        </td> </tr>
 		
-		</table>
+		<div id="content">
+		
+		
+		</div>
+
 		
 		<div class="linksPannel">
 			<a class="findMeAtLink" href="https://www.linkedin.com/in/osbourne-clark-a5419a252/">
-				<img src="./images/linkedin.png"> </img>
+				<img src="./IMG/linkedin.png"> </img>
 			</a>
 			<a class="findMeAtLink" href="https://www.youtube.com/@osbourneclark2487">
-				<img src="./images/youtubeImage.jpg"> </img>
+				<img src="./IMG/youtubeImage.jpg"> </img>
 			</a>
 		</div>
 	
