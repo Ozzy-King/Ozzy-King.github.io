@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 set output_file=list.txt
 
 :: Initialize the list in the output file
-echo {list: [ > %output_file%
+echo {"list": [ > %output_file%
 
 :: Flag to handle the first item formatting
 set first=true
@@ -19,8 +19,8 @@ for %%F in (*.html) do (
         echo , >> %output_file%
     )
     
-    :: Add the filename to the output file
-    echo "%%F" >> %output_file%
+    :: Add the filename without extension to the output file
+    echo "%%~nF" >> %output_file%
 )
 
 :: Close the JSON array in the output file

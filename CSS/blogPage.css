@@ -1,0 +1,20 @@
+#blogThumbTable{
+    margin: auto;
+}
+#blogThumbTable td{
+    max-width: 500px;
+}
+#blogThumbTable tr{
+    width: 200px;
+}
+#blogThumbTable img{
+    border-left: solid black;
+    border-right: solid black;
+    border-radius: 20%;
+
+}
+#blogThumbTable img{
+    width: 200px;
+    height: auto;
+
+}

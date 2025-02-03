@@ -44,6 +44,10 @@
 .devTable tr:hover { text-decoration: none; --rowBackground: #2F3F3F; }
 .devTable tr:active { text-decoration: none; }
 
+.devTable tr{
+	height: 4ch;
+}
+
 .devTable td.beg{
 	background-color: var(--rowBackground);
 	border-radius: 10px 0px 0px 10px;
