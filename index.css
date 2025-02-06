@@ -73,3 +73,7 @@ body{
     right: 0;
     top: 0;
 }
+
+#content{
+	width: 100%;
+}

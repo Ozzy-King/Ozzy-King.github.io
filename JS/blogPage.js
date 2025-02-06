@@ -38,9 +38,24 @@ async function JS_PAGE_INIT(){
         }
         dispTab.appendChild(row);
 
+        let tempData = data.list[i];
+        row.addEventListener("click", function() { loadBlog(tempData); } );
+
         console.log(blogThumb);
     }
 }
 
+async function loadBlog(blogname){
+    console.log("./HTML/BLOG/"+blogname+".html");
+    var gotBlogData = await fetch("./HTML/BLOG/"+blogname+".html");
+    var data = await gotBlogData.text();
 
-async function loadInBlog(){}
+    var blogContent = document.createElement('div');
+    blogContent.id = "blogContent";
+    blogContent.innerHTML = data;
+
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("content").appendChild(blogContent);
+
+
+}

@@ -1,8 +1,24 @@
+
+#blogContent{
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    padding-top: 2%;
+}
+
+#blogContent img{
+    width: 100%;
+    height: auto;
+}
+
 #blogThumbTable{
     margin: auto;
+    margin-right: 25%;
+    margin-left: 25%;
 }
 #blogThumbTable td{
     max-width: 500px;
+    width: 50%;
 }
 #blogThumbTable tr{
     width: 200px;
@@ -16,5 +32,4 @@
 #blogThumbTable img{
     width: 200px;
     height: auto;
-
 }

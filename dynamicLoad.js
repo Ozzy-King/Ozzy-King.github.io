@@ -48,8 +48,8 @@ async function loadHTML(filename) {
     if(filesAdded.indexOf(filename+'.html') !== -1) 
         return
 	var filePath = './HTML/'+filename+'.html';
+    console.log(filePath);
     var gotData = await fetch(filePath);
 	var data = await gotData.text();
-
     document.getElementById("content").innerHTML = data;
 }
