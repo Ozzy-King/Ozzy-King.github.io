@@ -51,6 +51,10 @@ body{
 	color: #ffe400 !important;
 	text-decoration: underline !important;
 }
+.currentPage{
+	color: #ffe400;
+	text-decoration: underline;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

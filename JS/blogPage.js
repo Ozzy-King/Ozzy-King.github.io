@@ -9,43 +9,49 @@ async function JS_PAGE_INIT(){
 
     var swap = true;
 
-    for(var i = 0; i < data.list.length; i++){
-        console.log("./HTML/BLOG/THUMB/"+data.list[i]+"_thumb.html");
-        var gotBlogThumb = await fetch("./HTML/BLOG/THUMB/"+data.list[i]+"_thumb.html");
-        
-        var blogThumb = await gotBlogThumb.text()
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(blogThumb, 'text/html');
+    var dataObj = await fetchAndSortBlogData(data);
 
-        var blogImg = doc.getElementsByTagName('img')[0];
-        var blogText = doc.getElementsByTagName('p')[0];
+    for(var i = 0; i < dataObj.length; i++){
+        //creat he table row
         var row = document.createElement('tr');
-
+        //set up iamge side
         var imgSide = document.createElement('td');
-        imgSide.appendChild(blogImg);
-
+        imgSide.appendChild(dataObj[i].image);
+        //setup text side
         var textSide = document.createElement('td');
-        textSide.appendChild(blogText);
+
+        var titleTextSide = document.createElement('h2');
+        titleTextSide.innerText = dataObj[i].title;
+        titleTextSide.classList += "centre";
+        textSide.appendChild(titleTextSide);
+
+        textSide.appendChild(dataObj[i].text);
+
+        var dateTextSide = document.createElement('p');
+        dateTextSide.innerText = "Created: "+dataObj[i].date;
+        textSide.appendChild(dateTextSide);
 
         if(swap){
+            imgSide.classList += "beg";
             row.appendChild(imgSide);
+            textSide.classList += "end";
             row.appendChild(textSide);
             swap = false;
         }else{
+            textSide.classList += "beg";
             row.appendChild(textSide);
+            imgSide.classList += "end";
             row.appendChild(imgSide);
             swap = true;
         }
         dispTab.appendChild(row);
 
-        let tempData = data.list[i];
+        let tempData = dataObj[i].title;
         row.addEventListener("click", function() { loadBlog(tempData); } );
-
-        console.log(blogThumb);
     }
 }
 
-async function loadBlog(blogname){
+async function loadBlog(blogname, popping = false){
     console.log("./HTML/BLOG/"+blogname+".html");
     var gotBlogData = await fetch("./HTML/BLOG/"+blogname+".html");
     var data = await gotBlogData.text();
@@ -56,6 +62,36 @@ async function loadBlog(blogname){
 
     document.getElementById("content").innerHTML = "";
     document.getElementById("content").appendChild(blogContent);
+    if(!popping){
+        history.pushState({ page: currentPage, blog: blogname }, "New Page Title", rootUrl+currentPage);
+    }
+}
 
+async function fetchAndSortBlogData(data){
+    var holder = [];
+    //get data
+    for(var i = 0; i < data.list.length; i++){
+        var tempOBJ = {};
+        console.log("./HTML/BLOG/THUMB/"+data.list[i]+"_thumb.html");
+        var gotBlogThumb = await fetch("./HTML/BLOG/THUMB/"+data.list[i]+"_thumb.html");
+        var blogThumb = await gotBlogThumb.text()
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(blogThumb, 'text/html');
 
+        tempOBJ["image"] = doc.getElementsByTagName('img')[0];
+        tempOBJ["text"] = doc.getElementsByTagName('p')[0];
+            tempOBJ["text"].classList += "centre";
+        tempOBJ["date"] = doc.getElementsByTagName('date')[0].innerText;
+        tempOBJ["title"] = data.list[i];
+        holder.push(tempOBJ);
+    }
+    //sort data
+    function sortFunction(a,b){  
+        var dateA = new Date(a.date).getTime();
+        var dateB = new Date(b.date).getTime();
+        return dateB-dateA;  
+    }; 
+    holder.sort(sortFunction);
+    console.log(holder);
+    return holder;
 }

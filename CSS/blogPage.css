@@ -1,3 +1,6 @@
+:root {
+	--rowBackground: #192222;
+  }
 
 #blogContent{
     text-align: left;
@@ -11,25 +14,61 @@
     height: auto;
 }
 
+#blogThumbTable th{
+	/*width: 12%;*/
+	background-color:  #41775C;
+	word-wrap: break-word;
+	max-width: 100px;
+	padding-left: 3px;
+	padding-right: 3px;
+	
+	border: solid 1px;
+}
+
 #blogThumbTable{
-    margin: auto;
-    margin-right: 25%;
     margin-left: 25%;
-}
-#blogThumbTable td{
-    max-width: 500px;
     width: 50%;
+    border-spacing: 0px 5px;
 }
+
 #blogThumbTable tr{
     width: 200px;
 }
-#blogThumbTable img{
-    border-left: solid black;
-    border-right: solid black;
-    border-radius: 20%;
 
+#blogThumbTable td{
+    max-width: 500px;
+    width: 50%;
+    
+	border: solid 1px;
+	background-color: var(--rowBackground);
 }
+
+#blogThumbTable tr:link { text-decoration: none; }
+#blogThumbTable tr:visited { text-decoration: none; }
+#blogThumbTable tr:hover { text-decoration: none; --rowBackground: #2F3F3F; }
+#blogThumbTable tr:active { text-decoration: none; }
+
 #blogThumbTable img{
+    border-radius: 20%;
+    margin: auto;
+    display: block;
     width: 200px;
     height: auto;
+}
+
+#blogThumbTable td.beg{
+	background-color: var(--rowBackground);
+	border-radius: 10px 0px 0px 10px;
+}
+#blogThumbTable td.end{
+	background-color: var(--rowBackground);
+	border-radius: 0px 10px 10px 0px;
+}
+
+#blogThumbTable .centre{
+    text-align: center;
+}
+
+#blogThumbTable h2{
+    text-decoration: underline overline;
 }

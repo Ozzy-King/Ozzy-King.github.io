@@ -1,11 +1,21 @@
 // The string stores the name of files added till now 
 var filesAdded = '';  
-  
-async function loadPage(pageName){
+var currentPage="homePage";
+var rootUrl = "";  
+
+function setRootURL(){
+    rootUrl = window.location.href.replace("index.html", ""); 
+}
+
+async function loadPage(pageName, popping = false){
+    console.log(currentPage);
+    document.getElementById(currentPage).classList.remove("currentPage");
+    currentPage = pageName;
+    document.getElementById(currentPage).classList.add("currentPage");
 	unloadPage();
-	loadCSS(pageName);
-	loadJS(pageName);
-	await loadHTML(pageName);
+	await loadCSS(pageName);
+	await loadJS(pageName);
+	await loadHTML(pageName, popping);
 	JS_PAGE_INIT();//function foundin loaded javascripts to init them them
 }
   
@@ -43,7 +53,7 @@ function loadCSS(filename) {
 }
 
 // To load CSS file 
-async function loadHTML(filename) {  
+async function loadHTML(filename, popping) {  
 	
     if(filesAdded.indexOf(filename+'.html') !== -1) 
         return
@@ -52,4 +62,16 @@ async function loadHTML(filename) {
     var gotData = await fetch(filePath);
 	var data = await gotData.text();
     document.getElementById("content").innerHTML = data;
+    if(!popping){
+        history.pushState({ page: filename }, "New Page Title", rootUrl+filename);
+    }
 }
+
+window.addEventListener('popstate', async function(event) {
+    // Handle the state change and update the page content
+    await loadPage(event.state.page, true);
+    if(event.state.blog){
+        await loadBlog(event.state.blog, true);
+    }
+    console.log("State changed:", event.state);
+  });

@@ -1,5 +1,4 @@
 
-var currentPage="";
 var _darkMode = 0;
 
 //window.addEventListener("load", function(){browserSetup();});
@@ -7,12 +6,11 @@ var _darkMode = 0;
 //once loaded run function
 window.onload = async function(){
 	OnloadFunc();
+	setRootURL();
 	await loadPage('homePage');
 }
 
 function OnloadFunc(){
-	currentPage = document.getElementById("body").classList[0];
-	console.log("currentPage: "+currentPage);
 	
 	_darkMode = getCookie("darkMode");
 	if(_darkMode == "null"){_darkMode = 0;}
