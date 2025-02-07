@@ -63,15 +63,47 @@ async function loadHTML(filename, popping) {
 	var data = await gotData.text();
     document.getElementById("content").innerHTML = data;
     if(!popping){
-        history.pushState({ page: filename }, "New Page Title", rootUrl+filename);
+        history.pushState({ page: filename }, "New Page Title", rootUrl);
     }
 }
 
-window.addEventListener('popstate', async function(event) {
+
+
+//most of the site navigation stuff
+
+
+// Store the original pushState method
+const originalPushState = history.pushState;
+
+// Create a custom pushState function
+history.pushState = function(state, title, url) {
+  // Call the original pushState method
+  originalPushState.apply(history, arguments);
+
+  // Dispatch a custom event after pushState is called
+  const event = new CustomEvent('pushstate', {
+    detail: { state, title, url }
+  });
+  window.dispatchEvent(event);
+};
+
+async function loadPageOnEvent(event){
     // Handle the state change and update the page content
     await loadPage(event.state.page, true);
     if(event.state.blog){
         await loadBlog(event.state.blog, true);
     }
-    console.log("State changed:", event.state);
-  });
+}
+
+window.addEventListener('popstate', async function(event) {
+    await loadPageOnEvent(event);
+});
+window.addEventListener('pushstate', async function(event) {
+    // Handle the state change and update the page content
+    updateCookie("currentState", JSON.stringify(event.detail));
+    console.log( event.detail);
+});
+
+window.addEventListener('unload', function () {
+    window.location.href = rootUrl + "index.html";
+});

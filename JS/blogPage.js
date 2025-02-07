@@ -63,7 +63,7 @@ async function loadBlog(blogname, popping = false){
     document.getElementById("content").innerHTML = "";
     document.getElementById("content").appendChild(blogContent);
     if(!popping){
-        history.pushState({ page: currentPage, blog: blogname }, "New Page Title", rootUrl+currentPage);
+        history.pushState({ page: currentPage, blog: blogname }, "New Page Title", rootUrl);
     }
 }
 

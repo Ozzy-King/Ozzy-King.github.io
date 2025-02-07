@@ -7,7 +7,13 @@ var _darkMode = 0;
 window.onload = async function(){
 	OnloadFunc();
 	setRootURL();
-	await loadPage('homePage');
+	if(getCookie("currentState") != "null" && getCookie("reload?") == "true"){
+		var event = JSON.parse(getCookie("currentState"));
+		await loadPageOnEvent(event);
+	}
+	else{
+		await loadPage('homePage');
+	}
 }
 
 function OnloadFunc(){
