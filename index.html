@@ -1,61 +1,91 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Osbournes Webplace</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+	<link rel="stylesheet" type="text/css" href="style/colour.css" />
+	<script src="repoDisplay.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+<div id="main">
+  <div id="links"> <a href="https://www.youtube.com/@osbourneclark2487/featured">youtube</a> | <a href="https://www.linkedin.com/in/osbourne-clark-a5419a252/">linkedin</a>  </div>
+  <div id="logo">
+    <h1>Osbournes WebSpace</h1>
+    <h2>Anything you can do, i can do as if its 1970</h2>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a id="selected" href="index.html">Home</a></li>
+      <li><a href="page1.html">Blog</a></li>
+	  <li><a href="page1.html">certificate</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="column1">
+      <div id="latestPush" class="sidebaritem">
+        <h1>latest pushs</h1>
+      </div>
+      <div class="sidebaritem">
+        <h1>Item</h1>
+        <div class="sbilinks">
+        </div>
+      </div>
+      <div class="sidebaritem">
+        <h1>other information</h1>
+        <p> This space can be used for additional information such as a contact phone number, address
+          or maybe even a graphic. </p>
+      </div>
+    </div>
+    <div id="column2">
+		<h1>About Me</h1>
+		<p> 
+		Hi I'm Osbourne. I have a joy of coding, problem solving and a general 
+		itch to try anything. I mainly work with the c language family but have 
+		also delved into other languages such as python, and JavaScript. My main 
+		interest is backend system development, this includes things such as: 
+		using the IP (internet protocols), the mechanisms that are applied to the
+		front end like APIs and controllers in MVC, and general architecture 
+		design where interactivity is thought out and how each section should work. 
+		</p> 
+		<p> 
+		As for my recent endeavours. I have worked alongside a client, in a team,
+		to develop a mod through their custom-made modding API. While designing 
+		and creating levels I began thinking up a level editor that would help 
+		with the creation life cycle, and as a result I later created a Level 
+		editing tool that makes YAML files easier to visualise as well as 
+		manipulate.  
+		</p> 
+		<p> 
+		As well as clientele and 3d game-based development I have also designed
+		and created a web server from the ground up using the http/1.1 
+		specification. The webserver had the ability to serve everything needed
+		for a web page to work: html, CSS, JavaScript, PNG, jpg, jpeg. 
+		</p> 
+		<p> 
+		I plan for acquiring a job in embedded development, primarily in 
+		embedded software side but also wouldn't mind the other sides such as 
+		PCB board development, and potentially circuit design though I would 
+		need to study some more for circuit development. Other fields also 
+		interest me and so as a backup plan i can go into games development as 
+		I've also got skills (and a BSc) In games development. 
+		</p>
+	  
+		<h1>public github repos</h1>
+		<div id="repoArea">
 
-<html>
-
-	<head>
-		<link href="./index.css" rel="stylesheet"></link>
-		<script src="./jillaCookies.js"></script>
-		<script src="./dynamicUnload.js"></script>
-		<script src="./dynamicLoad.js"></script>
-		<script src="./functions.js"></script>
-		<title>Osbournes Portfolio</title>
-	</head>
-
-	<body id="body" class="index">
-	
-		<table class="mainTable" border=0>
-			<tr>
-				<th colspan=6 class="webTitle">Osbournes Web Place</th>
-			</tr>
-			
-			<tr class="navBar">
-				 <td id="homePage" class="buttons noselect" onclick="loadPage('homePage')">Home</td>
-				<td id="aboutPage" class="buttons noselect" onclick="loadPage('aboutPage')">About</td>
-				 <td id="blogPage" class="buttons noselect" onclick="loadPage('blogPage')">Blog</td>
-				  <td id="devPage" class="buttons noselect" onclick="loadPage('devPage')">Development</td>
-				<td id="artPage" class="buttons noselect">Art</td>
-				<td id="socPage" class="buttons noselect">Social Media</td>
-			</tr>
-			
-			<tr>
-				<td colspan=7>
-					<div class="divider"></div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=3><span id="darkButton" class="buttons noselect" onclick="darkModeOn()">Darkmode test</button></td>
-				<td colspan=3 style="text-align:right;"><span id="lightButton" class="noselect" onclick="lightModeOn()">Lightmode test</button></td>
-			</tr>
-		</table>
-		
-		<div id="content">
-		
-		
 		</div>
-
 		
-		<div class="linksPannel">
-			<a class="findMeAtLink" href="https://www.linkedin.com/in/osbourne-clark-a5419a252/">
-				<img src="./IMG/linkedin.png"> </img>
-			</a>
-			<a class="findMeAtLink" href="https://www.youtube.com/@osbourneclark2487">
-				<img src="./IMG/youtubeImage.jpg"> </img>
-			</a>
-		</div>
-	
-	</body>
-
-
-
-
+		<h2>Images</h2>
+		<p>images can be placed on the left, in the center or on the right.</p>
+		<span class="left"><img src="style/graphic.jpg" alt="" /></span>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+		<span class="center"><img src="style/graphic.jpg" alt="" /></span> <span class="right"><img src="style/graphic.jpg" alt="" /></span>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+	</div>
+  </div>
+  <div id="footer"> copyright &copy; 2006 your name | <a href="#">email@emailaddress</a> | <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.dcarter.co.uk">design by dcarter</a> </div>
+</div>
+</body>
 </html>
