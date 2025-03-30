@@ -1,0 +1,33 @@
+<p>This is the first blog, that i will hopfully contniue, for my journey throuhg the createion of my very own highly limited in capabilities game console</p>
+<p>Inital this started out as an idea to create my own assembly lanuage, but with the limited knowledge of IC chips designed to make it interpreted. this gave a added benefit of being cross platform due to just needing to recompile the intpreter for the target platform</p>
+<br>
+<img src="./IMG/BLOG/gameConsoleByteCode.PNG"></img>
+<p>The image above mainly shows the assemblys signature for when compiled to binary. it primary use is to help outline what is neede for he compiler to correct create the binary file. the tables at the bottom were for a older version that contatined compiled with unrequired bytes. it currently supports 16/32 bit values but will be downgraded to 8/16 bit values as so to further reduce instruction space</p>
+<p>Its no where near as compilcated as modern isntruction sets but should be able to be developed into an an assembly lanuage that provides good usablility but still retain simplicity.</p>
+<br>
+<img src="./IMG/BLOG/gameConsoleByteCodeOperands.PNG"></img>
+<p>The next image is a table showing all the differnt combinations of operands. some are illgeal and showuldnt be used but withte felxability of the interpreter can be used, just he operation wont produce a meaningful output. As stated previously th the 16/32 will be changing to 8/16 to reduce space. this table is purly ment for debugging and assurance that the output of the compiler is correct</p>
+<br>
+<img src="./IMG/BLOG/gameConsole_InitalDesignDoc.PNG"></img>
+<p>this final image is the intial design idea for the game console. since its creasteion more has been created and will hopfully make it into the future updates. it is mainly just outlining what i would like the console to have and some ideas on how some of the underlaying systems will work</p>
+<p>key compnents to the game console</p>
+<ul>
+    <li>user input to the device
+        <ul>
+            <li>3 buttons formed in a triangle shape</li>
+            <li>a flat analog joystick such as the ones seen on the psp</li> 
+            <li>full size SD card port for easy addition and playing of games</li>  
+        </ul>
+    </li>
+    <li>output to the users
+        <ul>
+            <li>LCD screen (not OLED, its suseptiable to screen burn)</li>
+            <li>possible limitation to what can be displayed. similar to gameboy and older game consoles</li>  
+        </ul>
+    </li>
+    <li>controlling devices
+        <ul>
+            <li>the use of the raspberry pico2 as its east to program for and has relativly good specs for a micro controller</li> 
+        </ul>
+    </li>
+</ul>

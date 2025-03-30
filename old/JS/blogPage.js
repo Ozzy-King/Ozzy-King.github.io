@@ -85,10 +85,15 @@ async function fetchAndSortBlogData(data){
         tempOBJ["title"] = data.list[i];
         holder.push(tempOBJ);
     }
+    function parseDate(dateStr) {
+        var parts = dateStr.split('/'); // Assuming the date format is day/month/year
+        return new Date(parts[1] + '/' + parts[0] + '/' + parts[2]); // Convert to month/day/year
+    }
+
     //sort data
     function sortFunction(a,b){  
-        var dateA = new Date(a.date).getTime();
-        var dateB = new Date(b.date).getTime();
+        var dateA = parseDate(a.date).getTime();
+        var dateB = parseDate(b.date).getTime();
         return dateB-dateA;  
     }; 
     holder.sort(sortFunction);
