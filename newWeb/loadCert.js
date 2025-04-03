@@ -5,10 +5,13 @@ async function loadCert(){
 	while (contentEle.firstChild) {
 		contentEle.removeChild(contentEle.lastChild);
 	}
-	console.log(window.location.href);
-	var repoResponse = await fetch(pageLocation + "/" +"cert.html"); 
 	
-	var homeContent = await repoResponse.text();
-	contentEle.innerHTML = homeContent; 
+	var repoResponse = await fetch("certs.txt"); 
+	var certText = await repoResponse.text();
+	certText = certText.replaceAll("\n", "");
+	//certText = certText.replace("\n", "");
+	console.log(certText);
+	var certJSON = JSON.parse(certText);
+	console.log(certJSON);
 	
 }

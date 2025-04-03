@@ -74,7 +74,7 @@ async function loadRepos(){
 		if(myArr[i].has_pages){
 			
 			node.src = "pageimage.png";
-			node.onclick = ()=>{ redirecting(window.location.href+"/"+myArr[i].name); };
+			node.onclick = ()=>{ redirecting(pageLocation+"/"+myArr[i].name); };
 		}	
 		img.appendChild(node);
 		row.appendChild(img);

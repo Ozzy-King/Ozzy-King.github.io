@@ -102,7 +102,7 @@ body {
 	height: auto;
 }
 .repoitem div.repopage:has(> img){
-	background-color:var(--textcolour);
+	background-color: var(--textcolour);
 }
 .repopage{
 	border-left: solid;
@@ -116,4 +116,26 @@ body {
 	font-size: 1.2ch;
 	/*padding-bottom: 5px;*/
 	padding-left: 4px;
+}
+
+/*certificate styleing*/
+.certrow{
+	width: 50%;
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: 15% auto;
+	background-color: #192222;
+}
+.certrow h3{
+	font-size: 125%;
+}
+.certrow p{
+	font-size: 95%;
+}
+
+.certrow img{
+	width: 100%;
+	height: auto;
+
 }

@@ -1,18 +1,16 @@
 [
 	{
-		title:"Programming Foundations: Object-Oriented Design", 
-		issued:"jan-2024", 
-		expire: "",
-		Issuer: "LinkedIn", 
-		link: "https://www.linkedin.com/learning/certificates/f4daa5c4beeb4f7c9308ff8b44b81169537cfa7c8a2f9e634d713288f10db323?trk=share_certificate"
+		"title":"Programming Foundations: Object-Oriented Design", 
+		"issued":"jan-2024", 
+		"expire": "",
+		"Issuer": "LinkedIn", 
+		"link": "https://www.linkedin.com/learning/certificates/f4daa5c4beeb4f7c9308ff8b44b81169537cfa7c8a2f9e634d713288f10db323?trk=share_certificate"
 	},
 	{
-		title:"Scrum: The Basics", 
-		issued:"oct-2024", 
-		expire: "",
-		Issuer: "LinkedIn", 
-		link: "https://www.linkedin.com/learning/certificates/99990350e18d4ba50829218c4941e1b7352bbcc98f29fd7b98ca36a8f28a39a6?trk=share_certificate"
+		"title":"Scrum: The Basics", 
+		"issued":"oct-2024", 
+		"expire": "",
+		"Issuer": "LinkedIn", 
+		"link": "https://www.linkedin.com/learning/certificates/99990350e18d4ba50829218c4941e1b7352bbcc98f29fd7b98ca36a8f28a39a6?trk=share_certificate"
 	}
-
-
 ]

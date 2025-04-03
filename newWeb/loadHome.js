@@ -13,7 +13,7 @@ async function loadHome(){
 		contentEle.removeChild(contentEle.lastChild);
 	}
 	console.log(window.location.href);
-	var repoResponse = await fetch(pageLocation + "/" +"home.html"); 
+	var repoResponse = await fetch("home.html"); 
 	
 	var homeContent = await repoResponse.text();
 	contentEle.innerHTML = homeContent; 

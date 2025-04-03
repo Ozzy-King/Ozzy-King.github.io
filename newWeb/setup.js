@@ -11,7 +11,7 @@ function isTab(tabStr){
 }
 
 window.onload = function(){
-	pageLocation = window.location.href.replace("/index.html", "");
+	pageLocation = "https://ozzy-king.github.io";
 	currentTab = document.getElementById("homeTab");
 	
 	document.getElementById("publicRepoTab").onclick=async() => {
