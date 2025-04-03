@@ -120,18 +120,29 @@ body {
 
 /*certificate styleing*/
 .certrow{
-	width: 50%;
+	width: 45%;
 	margin: auto;
+	margin-top: 10px;
 
 	display: grid;
-	grid-template-columns: 15% auto;
+	grid-template-columns: 15% auto auto;
 	background-color: #192222;
+	border-radius: 5px;
+	
 }
+
+.certrow:hover{
+		background-color: #2F3F3F;
+}
+
 .certrow h3{
 	font-size: 125%;
+	margin: auto;
+	text-decoration: underline;
 }
 .certrow p{
 	font-size: 95%;
+	margin: auto;
 }
 
 .certrow img{
