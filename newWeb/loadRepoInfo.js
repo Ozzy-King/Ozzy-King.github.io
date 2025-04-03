@@ -59,9 +59,9 @@ async function loadRepos(){
 		lang = lang.replace("#", "sharp");
 		console.log(lang);
 		if(knownLanguages.includes(lang )){
-			node.src = "LangLogo/"+lang +".png";
+			node.src = "Logo/"+lang +".png";
 		}else{
-			node.src = "LangLogo/null.png";
+			node.src = "Logo/null.png";
 		}
 		img.appendChild(node);
 		row.appendChild(img);
