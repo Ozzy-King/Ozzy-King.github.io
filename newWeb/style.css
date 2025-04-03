@@ -6,12 +6,18 @@
 	--beige2:#C9B194;
 	--offwhite:#DBDBDB;
 	--black: #0D0D0D;
+	
+	--backcolour: #201f1d;
+	--textcolour: #BAA600;
+	
+	--divider: #3c6a97;
+	--divider2: #3C9797;
 }
 
 /* Background */
 body {
-  background-color: var(--redy-green);
-  color: var(--black);
+  background-color: var(--backcolour);
+  color: var(--textcolour);
   font-family: Arial, sans-serif;
 }
 
@@ -24,7 +30,7 @@ body {
 #navigation {
   width: 33%;
   margin: auto;
-  background-color: var(--beige2);
+  background-color: var(--divider2);
   
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -33,52 +39,81 @@ body {
   border-bottom: 1px solid var(--black);
 }
 
-/* Navigation Buttons */
 .navbutton {
   border-left: 2px solid var(--black);
+  color: var(--black);
 }
 
 .navselected {
-  background-color: var(--green);
-  color: black;
+  background-color: var(--divider);
+  color: var(--textcolour);
 }
 
 .navbutton:hover {
-  color: var(--redy-green);
+  background-color: var(--divider);
 }
 
 /* Text Section */
 .TextSection {
   width: 75%;
-  background-color: var(--beige2);
+  background-color: #2F3F3F;
   border: double 5px var(--black);
   margin: 10px auto 0px auto;
 }
 
 
+/*repo section for styleing public repos*/
 .repoitem{
 	border-radius: 5px;
-	width: 75%;
-	background-color: var(--beige2);
+	width: 50%;
+	background-color: #192222;
+	border: solid 1px;
+	
 	text-align: left;
-	margin: auto;
+	margin: 10px auto 0px auto;
+	
+	display: grid;
+	grid-template-columns: 87% 6.5% 6.5%;
+	
+	font-size: 85%;
 }
 .repoitem:hover{
-	background-color: var(--beige1);
+	background-color: #2F3F3F;
 }
 
 .repoitem h3{
 	margin: 0px;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 	padding-top: 5px;
+	text-decoration: underline;
+	
+	padding-left: 4px;
 }
 .repoitem p{
 	margin: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: solid 1px;
+
+	padding-left: 7px;
+}
+.repoitem img{
+	width: 100%;
+	height: auto;
+}
+.repoitem div.repopage:has(> img){
+	background-color:var(--textcolour);
+}
+.repopage{
+	border-left: solid;
+}
+.repolang{
+	border-left: solid;
 }
 
-
-.repoInfo{
-	font-size: 1ch;
-	margin-bottom: 10px;
-	padding-bottom: 5px;
+.repoitem p.repoInfo{
+	/*padding-top: 5px;*/
+	font-size: 1.2ch;
+	/*padding-bottom: 5px;*/
+	padding-left: 4px;
 }
