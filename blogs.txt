@@ -1,0 +1,17 @@
+[
+    {
+        "thumb":"blogImg/thumb/computerHand.jpg",
+        "title":"test Blog",
+        "summary":"first BLOG on the blog page(testing)",
+        "content":"blogContent/FirstBlog.html",
+        "created":"05/04/2025"
+    },
+    {
+        "thumb":"blogImg/thumb/ConsoleBlog1_thumb.png",
+        "title":"FirstBlog",
+        "summary":"This is the first blog for my game console project",
+        "content":"blogContent/Game Console Designing.html",
+        "created":"05/04/2020"
+    }
+
+]

@@ -30,7 +30,6 @@ window.onload = function(){
 	};
 	console.log("added onclick for homeTab");
 	
-	
 	document.getElementById("certificateTab").onclick=async() => {
 		if(!isTab("certificateTab")){
 			gotoTab("certificateTab");
@@ -38,4 +37,14 @@ window.onload = function(){
 		}
 	};
 	console.log("added onclick for certificateTab");
+	
+	document.getElementById("blogTab").onclick=async() => {
+		if(!isTab("blogTab")){
+			gotoTab("blogTab");
+			await loadBlog();
+		}
+	};
+	console.log("added onclick for blog");
+
+	loadHome();
 }

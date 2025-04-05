@@ -125,10 +125,17 @@ body {
 	margin-top: 10px;
 
 	display: grid;
-	grid-template-columns: 15% auto auto;
+	grid-template-columns: 15% auto 20%;
 	background-color: #192222;
 	border-radius: 5px;
-	
+
+	border: solid 1px;
+}
+.certrow >div{
+	border-left: solid 1px;
+
+	display: grid;
+	grid-template-columns: auto;
 }
 
 .certrow:hover{
@@ -136,17 +143,67 @@ body {
 }
 
 .certrow h3{
-	font-size: 125%;
+	font-size: 115%;
 	margin: auto;
-	text-decoration: underline;
 }
 .certrow p{
 	font-size: 95%;
 	margin: auto;
+	text-align: left;
 }
 
 .certrow img{
 	width: 100%;
 	height: auto;
 
+}
+
+
+/*blog stylering*/
+
+#blogcontainer{
+	margin: auto;
+	width: 75%;
+	display: grid;
+	grid-template-columns: 33.3% 33.3% 33.3%;
+	margin: 10px auto 0px auto;
+}
+.blogItem{
+	border: solid 1px;
+	background-color: #192222;
+}
+
+.blogItem:hover{
+	background-color: #2F3F3F;
+}
+
+
+.blogItem > img{
+	width: 100%;
+	height: auto;
+	border-bottom: solid 1px;
+}
+.blogItem > h3{
+	font-size: 140%;
+	margin-top: 0px;
+	margin-bottom: 5px;
+
+	text-decoration: underline;
+}
+.blogItem > summary{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.blog{
+	width: 40%;
+	margin: auto;
+	text-align: left;
+}
+.blog > p{
+	width: 100%;
+}
+.blog > img{
+	width: 100%;
+	height: auto;
 }

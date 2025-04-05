@@ -16,29 +16,32 @@ async function loadCert(){
 	
 	for(let i = 0; i  < certJSON.length; i++){
 		var row = document.createElement('div');
+		row.classList.add("certrow");
 		
 		var issuerLogo = document.createElement('img');
 		issuerLogo.src = "logo/"+certJSON[i].Issuer.toLowerCase()+".png";
 		row.appendChild(issuerLogo);
 		
 		var CertName = document.createElement('h3');
-		issuerLogo.innerText = "logo/"+certJSON[i].title+".png";
+		CertName.innerText = certJSON[i].title;
 		row.appendChild(CertName);
 		
 		
 		var infoholder = document.createElement('div');
-		var info = document.createElement('p');
-		info.innerText = "issued: "+certJSON[i].issued;
-		infoholder.appendChild(info);
+			var info = document.createElement('p');
+			info.innerText = "issued: "+certJSON[i].issued;
+			infoholder.appendChild(info);
 		
-		info = document.createElement('p');
-		info.innerText = "expires: "+certJSON[i].expire;
-		infoholder.appendChild(info);
-		
+			info = document.createElement('p');
+			info.innerText = "expires: "+certJSON[i].expire;
+			infoholder.appendChild(info);
 		row.appendChild(infoholder);
+		row.onclick = ()=>{ redirecting(certJSON[i].link); }
 		
 		contentEle.appendChild(row);
 	}
-	issueLogo.src = "logo/"
+	//issueLogo.src = "logo/"
 	
 }
+
+function redirecting(url){window.location.href = url;}

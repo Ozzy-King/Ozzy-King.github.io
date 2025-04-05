@@ -1,4 +1,3 @@
- = [];
 //contains
 //{
 //	name: String
