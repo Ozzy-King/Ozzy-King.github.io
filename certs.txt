@@ -1,16 +1,23 @@
 [
 	{
 		"title":"Programming Foundations: Object-Oriented Design", 
-		"issued":"jan-2024", 
+		"issued":"Jan-2024", 
 		"expire": "",
 		"Issuer": "LinkedIn", 
 		"link": "https://www.linkedin.com/learning/certificates/f4daa5c4beeb4f7c9308ff8b44b81169537cfa7c8a2f9e634d713288f10db323?trk=share_certificate"
 	},
 	{
 		"title":"Scrum: The Basics", 
-		"issued":"oct-2024", 
+		"issued":"Oct-2024", 
 		"expire": "",
 		"Issuer": "LinkedIn", 
 		"link": "https://www.linkedin.com/learning/certificates/99990350e18d4ba50829218c4941e1b7352bbcc98f29fd7b98ca36a8f28a39a6?trk=share_certificate"
+	},
+	{
+		"title":"Advanced C Programming: Optimize Performance and Efficiency", 
+		"issued":"Apr-2025", 
+		"expire": "",
+		"Issuer": "LinkedIn", 
+		"link": "https://www.linkedin.com/learning/certificates/949dcaaeb5f382ed989d3de383f697f78a981aa0e9e9c4f5e440452d9378d5e6?trk=share_certificate"
 	}
 ]
