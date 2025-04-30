@@ -19,5 +19,12 @@
 		"expire": "",
 		"Issuer": "LinkedIn", 
 		"link": "https://www.linkedin.com/learning/certificates/949dcaaeb5f382ed989d3de383f697f78a981aa0e9e9c4f5e440452d9378d5e6?trk=share_certificate"
+	},
+	{
+		"title":"Networking Foundations: IP Addressing", 
+		"issued":"Apr-2025", 
+		"expire": "",
+		"Issuer": "LinkedIn", 
+		"link": "https://www.linkedin.com/learning/certificates/a5ca786a4bed8d7ac126cdb6b052047b0cfbfe35ed0e455dc9284ef0b934961e?trk=share_certificate"
 	}
 ]
