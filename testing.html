@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	function myFunction() {
+		if ('Accelerometer' in window) {
+			const acl = new Accelerometer({ frequency: 60 });
+			acl.addEventListener("reading", () => {
+				document.getElementById('x').innerText = `Acceleration along the X-axis: ${acl.x}`;
+				document.getElementById('y').innerText = `Acceleration along the Y-axis: ${acl.y}`;
+				document.getElementById('z').innerText = `Acceleration along the Z-axis: ${acl.z}`;
+			});
+			acl.start();
+		} else {
+			document.getElementById('x').innerText = "Accelerometer not supported.";
+		}
+	}
+	</script>
+</head>
+<body onload="myFunction()">
+	<h1>Testing</h1>
+	<p id="x">x</p>
+	<p id="y">y</p>
+	<p id="z">z</p>
+</body>
+</html>
