@@ -1,0 +1,51 @@
+h1{
+	margin: auto;
+	text-align: center;
+}
+
+#inst{
+	margin: auto;
+}
+
+#instHolder{
+	background-color: #00ffc3;
+	
+	border-style: solid;
+	border-radius: 2%;
+	border-width: 2ch
+}
+.instImage{
+	width: 90%;
+	height: auto;
+	display: block;
+	margin: auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+.instSpin{
+	animation: spin 1s infinite;
+}
+.instUpDown{
+	animation: shakeUpDown 1s infinite;
+}
+.instLeftRight{
+	animation: shakeLeftRight 1s infinite;
+}
+
+@keyframes spin {
+  100% {transform: rotate(360deg);}
+}
+@keyframes shakeUpDown {
+  0%	{transform: translate(0, 40px);}
+  50%	{transform: translate(0, -40px);}
+  100%	{transform: translate(0, 40px);}
+}
+@keyframes shakeLeftRight {
+  0%	{transform: translate(40px, 0);}
+  50%	{transform: translate(-40px, 0);}
+  100%	{transform: translate(40px, 0);}
+}
+
+.hidden{
+	display: none;
+}
