@@ -1,0 +1,97 @@
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 90%;
+      width: 600px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0 auto 1rem;
+      word-wrap: break-word;
+    }
+
+    #instHolder {
+      background-color: #00ffc3;
+      border: 3px solid #000;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .instImage {
+      width: 90%;
+      height: auto;
+      display: block;
+      margin: auto;
+      padding: 1rem 0;
+    }
+
+    .instSpin {
+      animation: spin 1s infinite;
+    }
+
+    .instUpDown {
+      animation: shakeUpDown 1s infinite;
+    }
+
+    .instLeftRight {
+      animation: shakeLeftRight 1s infinite;
+    }
+	
+	.instPlay {
+      animation: play 1s infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes shakeUpDown {
+      0% { transform: translate(0, 40px); }
+      50% { transform: translate(0, -40px); }
+      100% { transform: translate(0, 40px); }
+    }
+
+    @keyframes shakeLeftRight {
+      0% { transform: translate(40px, 0); }
+      50% { transform: translate(-40px, 0); }
+      100% { transform: translate(40px, 0); }
+    }
+	
+	
+    @keyframes play {
+      0% { transform: scale(1); }
+	  50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #inst {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      word-break: break-word;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .instImage {
+        width: 100%;
+      }
+    }

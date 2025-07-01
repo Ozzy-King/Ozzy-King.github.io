@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orientation Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="game.js"></script>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body onload="start()">
+  <div class="container">
+    <h1>Orientation Game</h1>
+
+    <div id="instHolder">
+      <img id="spinInst" class="instImage instSpin hidden" src="./spin.png" alt="Spin Instruction">
+      <img id="shakeUpDownInst" class="instImage instUpDown hidden" src="./shakeUpDown.png" alt="Shake Up Down">
+      <img id="shakeLeftRightInst" class="instImage instLeftRight hidden" src="./shakeLeftRight.png" alt="Shake Left Right">
+	  <img id="playInst" class="instImage instPlay" src="./play.png" alt="press play">
+    </div>
+
+    <p id="inst">Waiting for action...</p>
+  </div>
+</body>
+</html>
