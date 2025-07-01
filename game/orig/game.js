@@ -28,7 +28,7 @@ let actionListInstEle = [];
 const spin = 0;
 const shakeUpDown = 1;
 const shakeLeftRight = 2;
-const shakeThreshHold = 5;
+const shakeThreshHold = 10;
 
 let maxTime = 60 * 10;
 let curTime = 0;
