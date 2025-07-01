@@ -43,6 +43,7 @@ let currentAction = 0;
 
 
 function isAction(actIndex){
+	if(currentAction === -1){ return false; }
 	return actionList[actIndex];
 }
 function setAction(actIndex, state){
@@ -148,20 +149,24 @@ function shakeCheck() {
 }
 
 function start() {
-  actionListInstEle.push(document.getElementById('spinInst'));
-  actionListInstEle.push(document.getElementById('shakeUpDownInst'));
-  actionListInstEle.push(document.getElementById('shakeLeftRightInst'));
+	//set sensors with logic
+	spinCheck();
+	shakeCheck();
+	
+	//create array with inst images
+	actionListInstEle.push(document.getElementById('spinInst'));
+	actionListInstEle.push(document.getElementById('shakeUpDownInst'));
+	actionListInstEle.push(document.getElementById('shakeLeftRightInst'));
 }
 
 function play(){
+	//global reset
 	score = -1;
 	curTime = 0;
 	maxTime = 60 * 10;
 	inStop = 0;
 	
-	spinCheck();
-	shakeCheck();
-	
+	//try and start
 	if(!error){
 		document.getElementById('playInst').classList.add("hidden");
 		nextAction();
@@ -173,18 +178,18 @@ function play(){
 
 let inStop = 0;
 function stop(){
-	if(inStop === 1){ return;}
+	if(inStop == 1){ return;}
 	inStop = 1;
 	
-	actionListInstEle[currentAction].classList.add("hidden");
-	document.getElementById('playInst').classList.remove("hidden");
-	document.getElementById('inst').innerText = "Score: " + score;
+	actionListInstEle[currentAction].classList.add("hidden");//hide current
+	document.getElementById('playInst').classList.remove("hidden");//show play button
+	document.getElementById('inst').innerText = "Score: " + score;//show score
 	
-	actionList[currentAction] = false;
-	currentAction = -1;
-	score = -1;
-	curTime = 0;
-	maxTime = 60 * 10;
+	actionList[currentAction] = false;//set curetn action to false
+	currentAction = -1;//set current action to nothing
+	score = -1;//reset score
+	curTime = 0;//reset curretn time
+	maxTime = 60 * 10;//restet maxtime
 	
 	return;
 }
