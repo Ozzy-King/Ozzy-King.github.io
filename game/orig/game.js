@@ -30,7 +30,7 @@ const shakeUpDown = 1;
 const shakeLeftRight = 2;
 const shakeThreshHold = 5;
 
-let maxTime = 60 * 30;
+let maxTime = 60 * 10;
 let curTime = 0;
 
 let score = -1;
@@ -155,11 +155,16 @@ function start() {
 }
 
 function play(){
+	score = -1;
+	curTime = 0;
+	maxTime = 60 * 10;
+	inStop = 0;
+	
 	spinCheck();
 	shakeCheck();
 	
 	if(!error){
-		document.getElementById('shakeLeftRightInst').classList.add("hidden");
+		document.getElementById('playInst').classList.add("hidden");
 		nextAction();
 		document.getElementById('inst').innerText = '';
 	}else{
@@ -173,10 +178,8 @@ function stop(){
 	inStop = 1;
 	
 	actionListInstEle[currentAction].classList.add("hidden");
-	document.getElementById('shakeLeftRightInst').classList.remove("hidden");
+	document.getElementById('playInst').classList.remove("hidden");
 	
 	document.getElementById('inst').innerText = "Score: " + score;
-	
-	inStop = 0;
 	return;
 }
