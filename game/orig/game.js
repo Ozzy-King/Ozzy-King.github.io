@@ -55,9 +55,11 @@ function nextAction(){
 	curTime = 0;
 	maxTime = Math.max(maxTime - 10, 60);//reduce time to complete by ten reduces till 1 second
 	var nextAction = getRandomInt(3);
-	actionList[nextAction] = true;
+	actionList[currentAction] = false;
 	actionListInstEle[currentAction].classList.add("hidden");
-	currentAction = nextAction;
+	
+	currentAction = nextAction;	
+	actionList[nextAction] = true;
 	actionListInstEle[currentAction].classList.remove("hidden");
 }
 
@@ -75,7 +77,7 @@ function spinCheck() {
 	}
 	
 	sensor.addEventListener('reading', () => {
-		if(curTime > maxTime){ sensor.stop(); stop(); return; }
+		if(curTime > maxTime){ stop(); return; }
 		
 		if(isAction(spin)){
 		
@@ -112,7 +114,7 @@ function shakeCheck() {
 	let lowShake = 0;
 
 	laSensor.addEventListener("reading", () => {
-		if(curTime > maxTime){ laSensor.stop(); stop(); return; }
+		if(curTime > maxTime){ stop(); return; }
 		
 		if(isAction(shakeUpDown)){
 			//get the values
@@ -146,9 +148,6 @@ function shakeCheck() {
 }
 
 function start() {
-  spinCheck();
-  shakeCheck();
-  
   actionListInstEle.push(document.getElementById('spinInst'));
   actionListInstEle.push(document.getElementById('shakeUpDownInst'));
   actionListInstEle.push(document.getElementById('shakeLeftRightInst'));
@@ -179,7 +178,13 @@ function stop(){
 	
 	actionListInstEle[currentAction].classList.add("hidden");
 	document.getElementById('playInst').classList.remove("hidden");
-	
 	document.getElementById('inst').innerText = "Score: " + score;
+	
+	actionList[currentAction] = false;
+	currentAction = -1;
+	score = -1;
+	curTime = 0;
+	maxTime = 60 * 10;
+	
 	return;
 }
