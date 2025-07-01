@@ -43,7 +43,7 @@ let currentAction = 0;
 
 
 function isAction(actIndex){
-	if(currentAction === -1){ return false; }
+	if(currentAction == -1){ return false; }
 	return actionList[actIndex];
 }
 function setAction(actIndex, state){
@@ -55,9 +55,15 @@ function nextAction(){
 	score += 1;
 	curTime = 0;
 	maxTime = Math.max(maxTime - 10, 60);//reduce time to complete by ten reduces till 1 second
-	var nextAction = getRandomInt(3);
-	actionList[currentAction] = false;
-	actionListInstEle[currentAction].classList.add("hidden");
+	var nextAction = getRandomInt(3);//get new instruction that different from the last
+	while(nextAction == currentAction){
+		nextAction = getRandomInt(3);
+	}
+	
+	if(currentAction != -1){//reset last instuction if possible
+		actionList[currentAction] = false;
+		actionListInstEle[currentAction].classList.add("hidden");
+	}
 	
 	currentAction = nextAction;	
 	actionList[nextAction] = true;
