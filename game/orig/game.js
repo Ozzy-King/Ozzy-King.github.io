@@ -211,9 +211,9 @@ function stop(){
 }
 
 function setScore(setScore){
-	var score1 = getCookie("score1");
-	var score2 = getCookie("score2");
-	var score3 = getCookie("score3");
+	var score1 = getCookie("score1") == "" ? 0 : getCookie("score1") ;
+	var score2 = getCookie("score2") == "" ? 0 : getCookie("score2");
+	var score3 = getCookie("score3") == "" ? 0 : getCookie("score3");
 	if(setScore > score1){
 		setCookie("score1", setScore, 30);//over write score 1
 		setScore = score1; //ser score to score 1 to move down the leader board
