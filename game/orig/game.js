@@ -163,23 +163,27 @@ function start() {
 	actionListInstEle.push(document.getElementById('spinInst'));
 	actionListInstEle.push(document.getElementById('shakeUpDownInst'));
 	actionListInstEle.push(document.getElementById('shakeLeftRightInst'));
+
+	if(error){
+		document.getElementById('playInst').classList.add("hidden");
+		document.getElementById('inst').innerText = errorMessage;
+	}
+	
+
 }
 
 function play(){
+	if(error){ return; }//if error dont play
 	//global reset
 	score = -1;
 	curTime = 0;
 	maxTime = 60 * 10;
 	inStop = 0;
 	
-	//try and start
-	if(!error){
-		document.getElementById('playInst').classList.add("hidden");
-		nextAction();
-		document.getElementById('inst').innerText = '';
-	}else{
-		document.getElementById('inst').innerText = errorMessage;
-	}
+	//start
+	document.getElementById('playInst').classList.add("hidden");		
+	nextAction();
+	document.getElementById('inst').innerText = '';
 }
 
 let inStop = 0;
