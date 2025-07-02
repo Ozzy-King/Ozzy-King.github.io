@@ -215,13 +215,15 @@ function setScore(setScore){
 	var score2 = getCookie("score2");
 	var score3 = getCookie("score3");
 	if(setScore > score1){
-		setCookie("score1", score, 30);
+		setCookie("score1", setScore, 30);//over write score 1
+		setScore = score1; //ser score to score 1 to move down the leader board
 	}
-	else if(setScore > score2){
-		setCookie("score2", score, 30);
+	if(setScore > score2){
+		setCookie("score2", setScore, 30);
+		setScore = score2; //ser score to score 1 to move down the leader board
 	}
-	else if(setScore > score3){
-		setCookie("score3", score, 30);
+	if(setScore > score3){
+		setCookie("score3", setScore, 30);
 	}
 }
 function showScores(){
