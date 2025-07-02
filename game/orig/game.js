@@ -28,7 +28,7 @@ let actionListInstEle = [];
 const spin = 0;
 const shakeUpDown = 1;
 const shakeLeftRight = 2;
-const shakeThreshHold = 10;
+const shakeThreshHold = 6;
 
 let maxTime = 60 * 10;
 let curTime = 0;
@@ -167,9 +167,9 @@ function start() {
 	if(error){
 		document.getElementById('playInst').classList.add("hidden");
 		document.getElementById('inst').innerText = errorMessage;
+		return;
 	}
-	
-
+	showScores();
 }
 
 function play(){
@@ -193,13 +193,65 @@ function stop(){
 	
 	actionListInstEle[currentAction].classList.add("hidden");//hide current
 	document.getElementById('playInst').classList.remove("hidden");//show play button
-	document.getElementById('inst').innerText = "Score: " + score;//show score
+	showScores();//show score
 	
+
+
 	actionList[currentAction] = false;//set curetn action to false
 	currentAction = -1;//set current action to nothing
 	score = -1;//reset score
 	curTime = 0;//reset curretn time
 	maxTime = 60 * 10;//restet maxtime
 	
+
+
 	return;
 }
+
+function setScore(score){
+	var score1 = getCookie("score1");
+	var score2 = getCookie("score2");
+	var score3 = getCookie("score3");
+	if(score > score1){
+		setCookie("score1", score, 30);
+	}
+	else if(score > score2){
+		setCookie("score2", score, 30);
+	}
+	else if(score > score3){
+		setCookie("score3", score, 30);
+	}
+}
+function showScores(){
+	var score1 = getCookie("score1");
+	var score2 = getCookie("score2");
+	var score3 = getCookie("score3");
+
+	document.getElementById('inst').innerText = "Scores\n"
+											  + "1st: " + score1 + "\n"
+											  + "2nd: " + score2 + "\n"
+											  + "3rd: " + score3 + "\n";//show score
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
