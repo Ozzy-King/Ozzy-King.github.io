@@ -193,7 +193,9 @@ function stop(){
 	
 	actionListInstEle[currentAction].classList.add("hidden");//hide current
 	document.getElementById('playInst').classList.remove("hidden");//show play button
-	showScores();//show score
+
+	setScore();//set the score if highest
+	showScores();//show new scores
 	
 
 
@@ -223,14 +225,14 @@ function setScore(score){
 	}
 }
 function showScores(){
-	var score1 = getCookie("score1");
-	var score2 = getCookie("score2");
-	var score3 = getCookie("score3");
+	var score1 = getCookie("score1") == "" ? "0" : getCookie("score1");
+	var score2 = getCookie("score2") == "" ? "0" : getCookie("score2");
+	var score3 = getCookie("score3") == "" ? "0" : getCookie("score3");
 
-	document.getElementById('inst').innerText = "Scores\n"
-											  + "1st: " + score1 + "\n"
-											  + "2nd: " + score2 + "\n"
-											  + "3rd: " + score3 + "\n";//show score
+	document.getElementById('inst').innerText = "Scores:\n"
+											  + "1st- " + score1 + "\n"
+											  + "2nd- " + score2 + "\n"
+											  + "3rd- " + score3 + "\n";//show score
 }
 
 function getCookie(cname) {
