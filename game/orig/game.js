@@ -194,7 +194,7 @@ function stop(){
 	actionListInstEle[currentAction].classList.add("hidden");//hide current
 	document.getElementById('playInst').classList.remove("hidden");//show play button
 
-	setScore();//set the score if highest
+	setScore(score);//set the score if highest
 	showScores();//show new scores
 	
 
@@ -210,17 +210,17 @@ function stop(){
 	return;
 }
 
-function setScore(score){
+function setScore(setScore){
 	var score1 = getCookie("score1");
 	var score2 = getCookie("score2");
 	var score3 = getCookie("score3");
-	if(score > score1){
+	if(setScore > score1){
 		setCookie("score1", score, 30);
 	}
-	else if(score > score2){
+	else if(setScore > score2){
 		setCookie("score2", score, 30);
 	}
-	else if(score > score3){
+	else if(setScore > score3){
 		setCookie("score3", score, 30);
 	}
 }
